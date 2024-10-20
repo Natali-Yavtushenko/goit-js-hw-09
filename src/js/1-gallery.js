@@ -64,6 +64,9 @@ const images = [
     },
   ];
   
+  import SimpleLightbox from 'simplelightbox';
+  import 'simplelightbox/dist/simple-lightbox.min.css';
+
   const container = document.querySelector(".gallery");
 
   function createMarkup(arr) {
@@ -85,3 +88,9 @@ const images = [
   }
 
   container.insertAdjacentHTML('beforeend', createMarkup(images));
+
+
+  new SimpleLightbox('.gallery a', {
+    captionsData: 'alt',
+    captionDelay: 250,
+  });
